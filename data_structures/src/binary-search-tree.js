@@ -5,17 +5,52 @@ class BinarySearchTree {
     this.right = null;
   }
 
+  /* post order */
+  // depthFirstForEach(cb) {
+  //   /* Your code here */
+  //   function recurse(currentNode) {
+  //     if (currentNode.left && currentNode.right) {
+  //       recurse(currentNode.left);
+  //       recurse(currentNode.right);
+  //     } else if (currentNode.left) {
+  //       console.log("left");
+  //       recurse(currentNode.left);
+  //     } else if (currentNode.right) {
+  //       console.log("right");
+  //       recurse(currentNode.right);
+  //     }
+  //     cb(currentNode.value);
+  //   }
+  //   recurse(this);
+  // }
+
+  /* pre order */
   depthFirstForEach(cb) {
     /* Your code here */
-    console.log(this)
-    if (this.left) {
-      this = this.left
+    function recurse(currentNode) {
+      if (currentNode.left && currentNode.right) {
+        cb(currentNode.value);
+        console.log("left first");
+        recurse(currentNode.left);
+        console.log("right next");
+        recurse(currentNode.right);
+      } else if (currentNode.left) {
+        console.log("left");
+        cb(currentNode.value);
+        recurse(currentNode.left);
+      } else if (currentNode.right) {
+        console.log("right");
+        cb(currentNode.value);
+        recurse(currentNode.right);
+      } else {
+        cb(currentNode.value);
+      }
     }
+    recurse(this);
   }
 
   breadthFirstForEach(cb) {
     /* Your code here */
-
   }
 
   insert(value) {

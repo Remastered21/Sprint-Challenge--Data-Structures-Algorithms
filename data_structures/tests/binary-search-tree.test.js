@@ -7,7 +7,7 @@ describe('`depthFirstForEach` and `breadthFirstForEach`', () => {
     bst = new BinarySearchTree(5);
   });
 
-  test("`depthFirstForEach` executes a callback on every value in a tree in depth-first order", () => {
+  test.only("`depthFirstForEach` executes a callback on every value in a tree in depth-first order", () => {
     const array = [];
     const cb = x => array.push(x);
 
