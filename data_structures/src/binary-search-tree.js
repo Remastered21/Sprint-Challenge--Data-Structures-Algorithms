@@ -7,7 +7,10 @@ class BinarySearchTree {
 
   depthFirstForEach(cb) {
     /* Your code here */
-    
+    console.log(this)
+    if (this.left) {
+      this = this.left
+    }
   }
 
   breadthFirstForEach(cb) {
