@@ -51,6 +51,26 @@ class BinarySearchTree {
 
   breadthFirstForEach(cb) {
     /* Your code here */
+    function recurse(currentNode) {
+      if (currentNode.left && currentNode.right) {
+        cb(currentNode.left.value);
+        cb(currentNode.right.value);
+        console.log("left first");
+        recurse(currentNode.left);
+        console.log("right next");
+        recurse(currentNode.right);
+      } else if (currentNode.left) {
+        cb(currentNode.left.value);
+        console.log("left");
+        recurse(currentNode.left);
+      } else if (currentNode.right) {
+        cb(currentNode.right.value);
+        console.log("right");
+        recurse(currentNode.right);
+      }
+    }
+    cb(this.value);
+    recurse(this);
   }
 
   insert(value) {

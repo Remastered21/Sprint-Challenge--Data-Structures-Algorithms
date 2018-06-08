@@ -1,13 +1,13 @@
-const BinarySearchTree = require('../src/binary-search-tree');
+const BinarySearchTree = require("../src/binary-search-tree");
 
 let bst;
 
-describe('`depthFirstForEach` and `breadthFirstForEach`', () => {
+describe("`depthFirstForEach` and `breadthFirstForEach`", () => {
   beforeEach(() => {
     bst = new BinarySearchTree(5);
   });
 
-  test.only("`depthFirstForEach` executes a callback on every value in a tree in depth-first order", () => {
+  test("`depthFirstForEach` executes a callback on every value in a tree in depth-first order", () => {
     const array = [];
     const cb = x => array.push(x);
 
