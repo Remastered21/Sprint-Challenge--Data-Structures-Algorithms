@@ -25,25 +25,41 @@ class BinarySearchTree {
   // }
 
   /* pre order */
+  // depthFirstForEach(cb) {
+  //   /* Your code here */
+  //   function recurse(currentNode) {
+  //     if (currentNode.left && currentNode.right) {
+  //       cb(currentNode.value);
+  //       console.log("left first");
+  //       recurse(currentNode.left);
+  //       console.log("right next");
+  //       recurse(currentNode.right);
+  //     } else if (currentNode.left) {
+  //       console.log("left");
+  //       cb(currentNode.value);
+  //       recurse(currentNode.left);
+  //     } else if (currentNode.right) {
+  //       console.log("right");
+  //       cb(currentNode.value);
+  //       recurse(currentNode.right);
+  //     } else {
+  //       cb(currentNode.value);
+  //     }
+  //   }
+  //   recurse(this);
+  // }
+
+  /* optimized recursive depthfirst search */
   depthFirstForEach(cb) {
-    /* Your code here */
     function recurse(currentNode) {
-      if (currentNode.left && currentNode.right) {
-        cb(currentNode.value);
-        console.log("left first");
-        recurse(currentNode.left);
-        console.log("right next");
-        recurse(currentNode.right);
-      } else if (currentNode.left) {
+      cb(currentNode.value);
+      if (currentNode.left) {
         console.log("left");
-        cb(currentNode.value);
         recurse(currentNode.left);
-      } else if (currentNode.right) {
+      }
+      if (currentNode.right) {
         console.log("right");
-        cb(currentNode.value);
         recurse(currentNode.right);
-      } else {
-        cb(currentNode.value);
       }
     }
     recurse(this);
